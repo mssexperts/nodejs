@@ -1,0 +1,55 @@
+{
+  "name": "template-engine",
+  "version": "1.0.0",
+  "description": "Template Engine",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "NODE_ENV=development nodemon server.js",
+    "start": "./prepare-db.sh ${DB_CONNECTIONSTRING} && NODE_ENV=production node server.js",
+    "test": "./prepare-db.sh ${DB_CONNECTIONSTRING} && npm-run-all --silent test-*",
+    "test-nsp": "nsp check",
+    "test-lint": "node_modules/.bin/eslint ./*.js find ./config ./database ./controllers ./routes ./services ./utils ./test '*.js'",
+    "test-mocha": "find ./test -name '*.js' | xargs nyc mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:coreplatformteam/template-engine.git"
+  },
+  "author": "Ansible Platform Developers",
+  "dependencies": {
+    "@coreplatform/authentication-middleware": "^2.0.0",
+    "@coreplatform/correlationid-middleware": "^0.1.0",
+    "@coreplatform/node-http-error-module": "^1.0.0",
+    "ajv": "^6.5.0",
+    "ajv-errors": "^1.0.0",
+    "axios": "^0.18.0",
+    "compression": "^1.7.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.11.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.capitalize": "^4.2.1",
+    "lodash.isempty": "^4.4.0",
+    "lodash.snakecase": "^4.1.1",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.1",
+    "sequelize": "^4.33.4",
+    "uuid": "^3.2.1",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.0.1",
+    "nodemon": "^1.15.1",
+    "npm-run-all": "^4.1.2",
+    "sequelize-cli": "^4.0.0",
+    "nsp": "^3.2.1",
+    "nyc": "^11.4.1",
+    "sinon": "^4.5.0",
+    "it-each": "^0.4.0"
+  }
+}
