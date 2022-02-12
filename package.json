@@ -20,7 +20,7 @@
     "@coreplatform/authentication-middleware": "^2.0.0",
     "@coreplatform/correlationid-middleware": "^0.1.0",
     "@coreplatform/node-http-error-module": "^1.0.0",
-    "ajv": "^6.5.0",
+    "ajv": "^6.12.3",
     "ajv-errors": "^1.0.0",
     "axios": "^0.18.0",
     "compression": "^1.7.2",
